@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import styles from "./HomePage.module.css";
+import './Homepage.css'
 import Image from "next/image";
 import logo from "../../assets/logo.png";
 import { BsPlusLg } from "react-icons/bs";
@@ -21,7 +22,7 @@ const HomePage = () => {
   const [feedbackformlist, setFeedbackformlist] = useState([]);
   const fetchdata = async () => {
     try {
-      const res = await axios.get(`https://feedbackform-next-js.onrender.com/api/feedbackform`, {
+      const res = await axios.get(`http://localhost:3000/api/feedbackform`, {
         cache: "no-store",
       });
 
@@ -36,7 +37,7 @@ const HomePage = () => {
   const uploadfeedbackformData = async (id) => {
     try {
       const res = await fetch(
-        `https://feedbackform-next-js.onrender.com/api/feedbackform`,
+        `http://localhost:3000/api/feedbackform`,
 
         {
           method: "DELETE",
@@ -86,7 +87,7 @@ const HomePage = () => {
   }, [feedbackformlist]);
   const getData = async (id) => {
     fetch(
-      `https://feedbackform-next-js.onrender.com/api/feedbackform`,
+      `http://localhost:3000/api/feedbackform`,
 
       {
         method: "DELETE",
@@ -125,26 +126,26 @@ const HomePage = () => {
         {feedbackformlist.map((value, index) => {
           return (
             
-            <div key={value._id} className="formdata_box">
-              <div className="box_head">
+            <div key={value._id} className={styles.formdata_box}>
+              <div className={styles.box_head}>
                 <Image src={surveyicon} alt="surveyicon" />
               </div>
               <h3>{value.feedbacktitle}</h3>
-              <div className="formdata_details">
+              <div className={styles.formdata_details}>
                 <p>Submitted</p>
                 <p>{submitcount}</p>
               </div>
-              <div className="formdata_details">
+              <div className={styles.formdata_details}>
                 {" "}
                 <p>Viewed</p>
                 <p>{value.viewed}</p>
               </div>
-              <div className="formdata_details">
+              <div className={styles.formdata_details}>
                 {" "}
                 <p>Date published</p>
                 <p>{dateformat(value.createdAt)}</p>
               </div>
-              <div className="view_button">
+              <div className={styles.view_button}>
                 {" "}
                 <Button
                   onClick={() => {
@@ -158,7 +159,7 @@ const HomePage = () => {
                 </Button>
               </div>
 
-              <div className="edit_delete_button">
+              <div className={styles.edit_delete_button}>
                 <Button
                   onClick={() => {
                     router.push(`/editfeedbackform/${value._id}`);
@@ -185,17 +186,17 @@ const HomePage = () => {
           );
         })}
       </div>
-      <Modal className="modal_box" open={isModalOpen}>
+      <Modal className={styles.modal_box} open={isModalOpen}>
         <h1>Create Feedback Form</h1>
         <TextField
-          className="textField"
+          className={styles.textField}
           label="Generic Website Rating"
           variant="standard"
           size="medium"
           value={formTitle}
           onChange={(e) => setFormTitle(e.target.value)}
         />
-        <div className="modal_button">
+        <div className={styles.modal_button}>
           <Button
             onClick={() => {
               handleCancel();

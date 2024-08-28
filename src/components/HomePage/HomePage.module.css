@@ -96,11 +96,6 @@ margin-bottom: 15px;
   display: flex;
   gap: 10px;
   justify-content: center;
-}
-.ant-modal-footer{
-    display: none !important;
-}.ant-modal-close{
-    display: none !important;
 }.modal_box{
     width: 444px;
     height: 164px;
