@@ -1,0 +1,13 @@
+.star_icon{
+    color: gray;width: 26px;
+    height: 28px;
+    padding: 0.5px 0px 2.7px 0px;
+   cursor: pointer;
+   margin-bottom: 10px;
+    
+}.star_icon_container{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 10px;
+    align-items: center;
+}

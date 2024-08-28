@@ -1,0 +1,13 @@
+.single_line_input {
+  width: 458px;
+  height: 36px;
+  gap: 0px;
+  border-radius: 4px;
+  margin:10px 0 0 7px;
+  border: 1px solid black;
+  opacity: 0px;
+  background-color: transparent;
+  color: black;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}

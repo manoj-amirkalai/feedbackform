@@ -1,0 +1,23 @@
+.category_option{
+    display: flex;
+    gap: 30px;
+    margin: 20px 0 20px 10px;
+}.category_option span{
+    width: 115px;
+
+height: 33px;
+top: 2492px;
+left: 369px;
+gap: 0px;
+border: 1px solid black;
+opacity: 0px;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}.error_msg{
+    color: red;
+    margin-left: 10px;
+    margin-top: 20px;
+    display: none;
+}

@@ -1,0 +1,46 @@
+.addfield_textarea {
+  width: 473px;
+  height: max-content;
+  gap: 0px;
+  border: 10px !important;
+  border: 1px solid black;
+  opacity: 0px;
+  padding: 10px 2px 1px 2px;
+  margin: 50px 0 ;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px !important;
+}
+.addfield_textarea p {
+  margin-left: 5px;
+}
+.addfield_textarea_textarea {
+  width: 458px !important;
+  padding: 5px;
+  height: 106px !important;
+  margin: 5px;
+  gap: 0px;
+  resize: none;
+  border-radius: 4px;
+  background-color: transparent;
+  opacity: 0px;
+  color: black;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22.4px;
+  letter-spacing: 0.15000000596046448px;
+  text-align: left;
+}
+.edit_delete_icon {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  margin: 10px 10px 10px 0px;
+}
+.edit_delete_icons {
+  cursor: pointer;
+  color: gray;width: 14px;
+  height: 18px;
+  gap: 0px;
+  opacity: 0px;
+  
+}
