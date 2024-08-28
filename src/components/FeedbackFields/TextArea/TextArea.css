@@ -4,7 +4,7 @@
   gap: 0px;
   border: 10px !important;
   border: 1px solid black;
-  opacity: 0px;
+  
   padding: 10px 2px 1px 2px;
   margin: 50px 0 ;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
@@ -22,7 +22,7 @@
   resize: none;
   border-radius: 4px;
   background-color: transparent;
-  opacity: 0px;
+  
   color: black;
   font-size: 14px;
   font-weight: 400;
@@ -41,6 +41,6 @@
   color: gray;width: 14px;
   height: 18px;
   gap: 0px;
-  opacity: 0px;
+  
   
 }
