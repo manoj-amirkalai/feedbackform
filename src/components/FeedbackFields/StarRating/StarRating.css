@@ -1,13 +1,16 @@
-.star_icon{
-    color: gray;width: 26px;
-    height: 28px;
-    padding: 0.5px 0px 2.7px 0px;
-   cursor: pointer;
-   margin-bottom: 10px;
-    
-}.star_icon_container{
-    display: flex;
-    margin-top: 10px;
-    margin-left: 10px;
-    align-items: center;
+.star_icon {
+  color: gray;
+  width: 30px;
+  height: 30px;
+  padding: 0.5px 0px 2.7px 0px;
+  cursor: pointer;
+  margin-bottom: 0px;
+}
+.star_icon_container {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: -20px;
+  margin-left: 10px;
+  align-items: center;
+  font-size: 200px;
 }
