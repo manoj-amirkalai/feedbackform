@@ -124,7 +124,7 @@ const HomePage = () => {
 
           <p>New form</p>
         </div>
-        {feedbackformlist.map((value, index) => {
+        {feedbackformlist && feedbackformlist.map((value, index) => {
           return (
             
             <div key={value._id} className={styles.formdata_box}>

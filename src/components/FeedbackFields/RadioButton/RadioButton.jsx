@@ -29,7 +29,7 @@ const RadioButton = ({
             defaultValue="female"
             name="radio-buttons-group"
           >
-            {options.map((values, index) => {
+            {options && options.map((values, index) => {
               return (
                 <div key={index}>
                   <FormControlLabel

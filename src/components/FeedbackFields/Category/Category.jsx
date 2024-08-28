@@ -18,7 +18,7 @@ const Category = ({
     <div className="addfield_textarea">
       <p>{label}</p>
       <div className="category_option">
-      {options.map((data,index)=>{
+      {options && options.map((data,index)=>{
         return <span key={index}>{data}</span>
       })}
       </div>

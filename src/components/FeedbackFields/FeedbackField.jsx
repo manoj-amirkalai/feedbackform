@@ -311,7 +311,7 @@ const CreateForm = () => {
               <h3 className="create_form_lable">Add Fields</h3>
             ) : (
               <div>
-                {feedbackformlist.map((item, index) => {
+                {feedbackformlist && feedbackformlist.map((item, index) => {
                   return (
                     <div
                       key={item.id}
