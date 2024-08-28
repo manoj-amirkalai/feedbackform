@@ -3,4 +3,8 @@
     display: none !important;
 }.ant-modal-close{
     display: none !important;
+}.spin_loading{
+    position: fixed;
+    top: 25vh;
+    left: 50vw;
 }

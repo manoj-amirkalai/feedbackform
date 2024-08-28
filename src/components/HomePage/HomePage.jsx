@@ -1,14 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import styles from "./HomePage.module.css";
-import './Homepage.css'
+import "./Homepage.css";
 import Image from "next/image";
 import logo from "../../assets/logo.png";
 import { BsPlusLg } from "react-icons/bs";
 import surveyicon from "../../assets/surveyicon.png";
 import { Button, TextField } from "@mui/material";
 
-import { message, Modal } from "antd";
+import { Flex, message, Modal, Spin } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { setNewformtitle } from "../store/reducer";
 import axios from "axios";
@@ -16,7 +16,7 @@ import { useRouter } from "next/navigation";
 
 const HomePage = () => {
   const formtitle = useSelector((state) => state.data.newformtitle);
-  const[submitcount,setSubmitcount]=useState("")
+  const [submitcount, setSubmitcount] = useState("");
   const dispatch = useDispatch();
 
   const [feedbackformlist, setFeedbackformlist] = useState([]);
@@ -52,7 +52,7 @@ const HomePage = () => {
       }
 
       message.info("feedback Form deleted");
-      fetchdata()
+      fetchdata();
     } catch (error) {
       console.log(error);
     }
@@ -69,7 +69,12 @@ const HomePage = () => {
   const handleOk = () => {
     setIsModalOpen(false);
   };
-
+  const contentStyle = {
+    padding: 50,
+    background: "rgba(0, 0, 0, 0.05)",
+    borderRadius: 4,
+  };
+  const content = <div style={contentStyle} />;
   const handleCancel = () => {
     setIsModalOpen(false);
   };
@@ -101,13 +106,13 @@ const HomePage = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data[0].length);
-        setSubmitcount(data[0].length)
+        setSubmitcount(data[0].length);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   };
-  getData("66cec8029f09bd6ae0d6d136")
+  getData("66cec8029f09bd6ae0d6d136");
   return (
     <div className={styles.homepage}>
       <div className={styles.home_header}>
@@ -124,68 +129,75 @@ const HomePage = () => {
 
           <p>New form</p>
         </div>
-        {feedbackformlist && feedbackformlist.map((value, index) => {
-          return (
-            
-            <div key={value._id} className={styles.formdata_box}>
-              <div className={styles.box_head}>
-                <Image src={surveyicon} alt="surveyicon" />
-              </div>
-              <h3>{value.feedbacktitle}</h3>
-              <div className={styles.formdata_details}>
-                <p>Submitted</p>
-                <p>{submitcount}</p>
-              </div>
-              <div className={styles.formdata_details}>
-                {" "}
-                <p>Viewed</p>
-                <p>{value.viewed}</p>
-              </div>
-              <div className={styles.formdata_details}>
-                {" "}
-                <p>Date published</p>
-                <p>{dateformat(value.createdAt)}</p>
-              </div>
-              <div className={styles.view_button}>
-                {" "}
-                <Button
-                  onClick={() => {
-                    router.push(`/viewfeedbackform/${value._id}`);
-                  }}
-                  variant="contained"
-                  color="secondary"
-                  size="large"
-                >
-                  VIEW SUBMISSION
-                </Button>
-              </div>
+        { (feedbackformlist.length===0 || !feedbackformlist) && (
+          <Flex className="spin_loading" align="center" gap="middle">
+            <Spin tip="Loading..." size="large">
+              {content}
+            </Spin>
+          </Flex>
+        )}{" "}
+        {feedbackformlist &&
+          feedbackformlist.map((value, index) => {
+            return (
+              <div key={value._id} className={styles.formdata_box}>
+                <div className={styles.box_head}>
+                  <Image src={surveyicon} alt="surveyicon" />
+                </div>
+                <h3>{value.feedbacktitle}</h3>
+                <div className={styles.formdata_details}>
+                  <p>Submitted</p>
+                  <p>{submitcount}</p>
+                </div>
+                <div className={styles.formdata_details}>
+                  {" "}
+                  <p>Viewed</p>
+                  <p>{value.viewed}</p>
+                </div>
+                <div className={styles.formdata_details}>
+                  {" "}
+                  <p>Date published</p>
+                  <p>{dateformat(value.createdAt)}</p>
+                </div>
+                <div className={styles.view_button}>
+                  {" "}
+                  <Button
+                    onClick={() => {
+                      router.push(`/viewfeedbackform/${value._id}`);
+                    }}
+                    variant="contained"
+                    color="secondary"
+                    size="large"
+                  >
+                    VIEW SUBMISSION
+                  </Button>
+                </div>
 
-              <div className={styles.edit_delete_button}>
-                <Button
-                  onClick={() => {
-                    router.push(`/editfeedbackform/${value._id}`);
-                  }}
-                  variant="contained"
-                  color="success"
-                  size="large"
-                >
-                  Edit
-                </Button>
-                <Button
-                  onClick={() => {
-                    uploadfeedbackformData(value._id);
-                    fetchdata();
-                  }}
-                  variant="contained"
-                  color="primary"
-                  size="large"
-                >
-                  Delete
-                </Button>
+                <div className={styles.edit_delete_button}>
+                  <Button
+                    onClick={() => {
+                      router.push(`/editfeedbackform/${value._id}`);
+                    }}
+                    variant="contained"
+                    color="success"
+                    size="large"
+                  >
+                    Edit
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      uploadfeedbackformData(value._id);
+                      fetchdata();
+                    }}
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                  >
+                    Delete
+                  </Button>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
       <Modal className={styles.modal_box} open={isModalOpen}>
         <h1>Create Feedback Form</h1>
