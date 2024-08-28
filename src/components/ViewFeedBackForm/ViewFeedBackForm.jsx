@@ -38,6 +38,8 @@ const ViewFeedBackForm = ({ feedbackforminfo, id }) => {
   }, [id]);
   useEffect(() => {
     console.log("feedback", feedback);
+    console.log(feedbackforminfo);
+    
   }, [feedback]);
   const contentStyle = {
     padding: 50,
@@ -91,8 +93,8 @@ const ViewFeedBackForm = ({ feedbackforminfo, id }) => {
                         <span style={{ color: "blue" }}> {data.urlValue}</span>
                       </a>
                     )}
-                    <p>date: {data.dateFormatedvalue}</p>
-                    <p>Time: {data.timeFormatedvalue}</p>
+            {  data.dateSwitch &&      <p>date: {data.dateFormatedvalue}</p>}
+            {  data.timeSwitch &&         <p>Time: {data.timeFormatedvalue}</p>}
                   </div>
                   <p className="feedback_list">Feedback List</p>
                   {!feedback && (
