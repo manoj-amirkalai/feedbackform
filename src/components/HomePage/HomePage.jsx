@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import "./HomePage.css";
+import styles from "./HomePage.module.css";
 import Image from "next/image";
 import logo from "../../assets/logo.png";
 import { BsPlusLg } from "react-icons/bs";
@@ -107,17 +107,17 @@ const HomePage = () => {
   };
   getData("66cec8029f09bd6ae0d6d136")
   return (
-    <div className="homepage">
-      <div className="home_header">
+    <div className={styles.homepage}>
+      <div className={styles.home_header}>
         <Image src={logo} alt="logo" width={64} height={64} />
         <span>USER FEEDBACK</span>
       </div>
 
-      <div className="form_containers">
-        <div className="newform_box">
+      <div className={styles.form_containers}>
+        <div className={styles.newform_box}>
           <BsPlusLg
             onClick={() => setIsModalOpen(!isModalOpen)}
-            className="plus_icon"
+            className={styles.plus_icon}
           />
 
           <p>New form</p>
