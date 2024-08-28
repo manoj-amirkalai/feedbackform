@@ -67,12 +67,10 @@ const CreateForm = ({ id }) => {
   useEffect(() => {
     const date = selectedDate ? selectedDate.format("YYYY-MM-DD") : "None";
     setDateFormatedvalue(date);
-    console.log(dateFormatedvalue);
   }, [selectedDate]);
   useEffect(() => {
     const time = timeValue ? timeValue.format("HH:mm") : "None";
     setTimeFormatedvalue(time);
-    console.log(timeFormatedvalue);
   }, [timeValue]);
   const uploadfeedbackformData = async () => {
     if (!formTitle) {
@@ -91,7 +89,6 @@ const CreateForm = ({ id }) => {
       feedbacktitle: formTitle,
       feedbackform: feedbackformlist,
     };
-    console.log(data);
     if (feedbackformlist.length < 1) {
       return message.info("Minimum of 1 field need to publish.");
     }
@@ -158,7 +155,6 @@ const CreateForm = ({ id }) => {
     setFeedbackformlist(data);
   };
   useEffect(() => {
-    console.log(editFieldRequired);
   }, [editFieldRequired, editFieldId]);
   const updateformList = () => {
     const data = feedbackformlist.map((field) => {
@@ -191,7 +187,6 @@ const CreateForm = ({ id }) => {
       }
       return field;
     });
-    console.log("update", data);
     setFeedbackformlist(data);
   };
   const getData = async (id) => {
@@ -218,7 +213,6 @@ const CreateForm = ({ id }) => {
     getData(id);
   }, [id]);
   useEffect(() => {
-    console.log(feedbackforminfo);
 
     setUrlSwitch(feedbackforminfo.urlSwitch);
     setFormTitle(feedbackforminfo.feedbacktitle);
@@ -233,12 +227,10 @@ const CreateForm = ({ id }) => {
   const dragOverItem = useRef();
   const dragStart = (e, position) => {
     dragItem.current = position;
-    console.log(e.target.innerHTML);
   };
 
   const dragEnter = (e, position) => {
     dragOverItem.current = position;
-    console.log(e.target.innerHTML);
   };
   const drop = (e) => {
     const copyListItems = [...feedbackformlist];
@@ -302,7 +294,6 @@ const CreateForm = ({ id }) => {
         <div className="formcreate_button">
           <Button
             onClick={() => {
-              console.log(feedbackformlist);
               uploadfeedbackformData();
             }}
             variant="contained"

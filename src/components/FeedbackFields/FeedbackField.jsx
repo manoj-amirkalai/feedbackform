@@ -67,12 +67,10 @@ const CreateForm = () => {
   useEffect(() => {
     const date = selectedDate ? selectedDate.format("YYYY-MM-DD") : "None";
     setDateFormatedvalue(date);
-    console.log(dateFormatedvalue);
   }, [selectedDate]);
   useEffect(() => {
     const time = timeValue ? timeValue.format("HH:mm") : "None";
     setTimeFormatedvalue(time);
-    console.log(timeFormatedvalue);
   }, [timeValue]);
   const uploadfeedbackformData = async () => {
     if(!formTitle){
@@ -90,7 +88,6 @@ const CreateForm = () => {
       feedbacktitle: formTitle,
       feedbackform: feedbackformlist,
     };
-    console.log(data);
     if (feedbackformlist.length < 1) {
       return message.info("Minimum of 1 field need to publish.");
     }
@@ -159,10 +156,8 @@ const CreateForm = () => {
     setFeedbackformlist(data);
   };
   useEffect(() => {
-    console.log(feedbackformlist);
   }, [feedbackformlist]);
   useEffect(() => {
-    console.log(editFieldRequired);
   }, [editFieldRequired, editFieldId]);
   const updateformList = () => {
     const data = feedbackformlist.map((field) => {
@@ -202,12 +197,10 @@ const CreateForm = () => {
   const dragOverItem = useRef();
   const dragStart = (e, position) => {
     dragItem.current = position;
-    console.log(e.target.innerHTML);
   };
 
   const dragEnter = (e, position) => {
     dragOverItem.current = position;
-    console.log(e.target.innerHTML);
   };
   const drop = (e) => {
     const copyListItems = [...feedbackformlist];
@@ -276,7 +269,6 @@ const CreateForm = () => {
           </Button>
           <Button
             onClick={() => {
-              console.log(feedbackformlist);
               uploadfeedbackformData();
             }}
             variant="contained"

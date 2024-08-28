@@ -88,9 +88,6 @@ const HomePage = () => {
   useEffect(() => {
     fetchdata();
   }, []);
-  useEffect(() => {
-    console.log(feedbackformlist);
-  }, [feedbackformlist]);
   const getData = async (id) => {
     fetch(
       `https://feedbackform-next-js.onrender.com/api/feedbackform`,
@@ -105,7 +102,6 @@ const HomePage = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data[0].length);
         setSubmitcount(data[0].length);
       })
       .catch((error) => {

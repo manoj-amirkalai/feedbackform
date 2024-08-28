@@ -36,11 +36,6 @@ const ViewFeedBackForm = ({ feedbackforminfo, id }) => {
   useEffect(() => {
     getData(id);
   }, [id]);
-  useEffect(() => {
-    console.log("feedback", feedback);
-    console.log(feedbackforminfo);
-    
-  }, [feedback]);
   const contentStyle = {
     padding: 50,
     background: "rgba(0, 0, 0, 0.05)",

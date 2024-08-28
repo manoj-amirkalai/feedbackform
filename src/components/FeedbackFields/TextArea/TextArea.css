@@ -32,7 +32,7 @@
 }
 .edit_delete_icon {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   gap: 10px;
   margin: 10px 10px 10px 0px;
 }

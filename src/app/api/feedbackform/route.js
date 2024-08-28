@@ -76,13 +76,11 @@ export async function GET(request) {
 export async function DELETE(request) {
   const { id, type } = await request.json();
   if (type === "feedbackdata") {
-    console.log(id);
     await connectMongoDB();
     const feedback = await Feedback.find({ formid: id });
     return NextResponse.json([feedback], { status: 200 });
   }
   if (type === "singledata") {
-    console.log(id);
     await connectMongoDB();
     const feedbackform = await Feedbackform.findById({ _id: id });
     return NextResponse.json({ feedbackform }, { status: 200 });
