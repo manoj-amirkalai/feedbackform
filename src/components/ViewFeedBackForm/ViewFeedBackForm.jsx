@@ -17,7 +17,7 @@ const ViewFeedBackForm = ({ feedbackforminfo, id }) => {
   const [feedback, setFeedback] = useState();
   const getData = async (id) => {
     fetch(
-      `http://localhost:3000/api/feedbackform`,
+      `https://feedbackform-next-js.onrender.com/api/feedbackform`,
 
       {
         method: "DELETE",
