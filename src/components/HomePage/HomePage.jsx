@@ -52,6 +52,7 @@ const HomePage = () => {
       }
 
       message.info("feedback Form deleted");
+      fetchdata()
     } catch (error) {
       console.log(error);
     }
