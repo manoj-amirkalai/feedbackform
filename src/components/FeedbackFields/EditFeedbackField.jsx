@@ -342,7 +342,7 @@ const CreateForm = ({ id }) => {
           <div>
             {!feedbackformlist ? (
               <Flex
-                style={{ marginLeft: "40%", marginTop: "50%" }}
+                style={{ marginLeft: "45%", marginTop: "50%" }}
                 align="center"
                 gap="middle"
               >
