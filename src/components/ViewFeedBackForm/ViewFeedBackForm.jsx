@@ -49,7 +49,7 @@ const ViewFeedBackForm = ({ feedbackforminfo, id }) => {
           <Image src={logo} alt="logo" width={64} height={64} />
           <span>USER FEEDBACK</span>
         </div>{" "}
-        {feedbackforminfo.map((data) => {
+        {feedbackforminfo && feedbackforminfo.map((data) => {
           return (
             <div key={data._id}>
               {" "}
@@ -83,7 +83,7 @@ const ViewFeedBackForm = ({ feedbackforminfo, id }) => {
                   <p>Time: {data.timeFormatedvalue}</p>
                 </div>
                 <p className="feedback_list">Feedback List</p>
-                {feedback.map((value, index) => {
+                {feedback && feedback.map((value, index) => {
                   return (
                     <div
                       key={value._id}
