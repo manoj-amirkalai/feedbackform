@@ -307,9 +307,7 @@ const CreateForm = ({ id }) => {
           </Button>
         </div>{" "}
       </div>
-      <div className="create_form">
-        <div className="create_form_container">
-          <div className="create_form_container_head">
+      <div className="create_form"> <div className="create_form_container_head">
             {" "}
             <IoChevronBack
               style={{ cursor: "pointer" }}
@@ -330,6 +328,8 @@ const CreateForm = ({ id }) => {
               }}
             />
           </div>
+        <div className="create_form_container">
+         
           <div>
             {!feedbackformlist ? (
               <Flex
