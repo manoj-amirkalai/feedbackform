@@ -73,8 +73,8 @@ const CreateForm = () => {
     setTimeFormatedvalue(time);
   }, [timeValue]);
   const uploadfeedbackformData = async () => {
-    if(!formTitle){
-      return message.error("Please enter title")
+    if (!formTitle) {
+      return message.error("Please enter title");
     }
     const data = {
       urlSwitch: urlSwitch,
@@ -155,10 +155,8 @@ const CreateForm = () => {
 
     setFeedbackformlist(data);
   };
-  useEffect(() => {
-  }, [feedbackformlist]);
-  useEffect(() => {
-  }, [editFieldRequired, editFieldId]);
+  useEffect(() => {}, [feedbackformlist]);
+  useEffect(() => {}, [editFieldRequired, editFieldId]);
   const updateformList = () => {
     const data = feedbackformlist.map((field) => {
       if (field.type === "radiobutton" || field.type === "category") {
@@ -224,20 +222,18 @@ const CreateForm = () => {
           onChange={(e) => setFormTitle(e.target.value)}
         />
         <div className="modal_button">
-      
-            {" "}
-            <Button
-              onClick={() => {
-                handleCancel();
-                dispatch(setNewformtitle(formTitle));
-              }}
-              variant="text"
-              color="primary"
-              size="medium"
-            >
-              SAVE
-            </Button>
- 
+          {" "}
+          <Button
+            onClick={() => {
+              handleCancel();
+              dispatch(setNewformtitle(formTitle));
+            }}
+            variant="text"
+            color="primary"
+            size="medium"
+          >
+            SAVE
+          </Button>
           <Button
             onClick={handleOk}
             variant="text"
@@ -280,128 +276,130 @@ const CreateForm = () => {
         </div>{" "}
       </div>
       <div className="create_form">
+        {" "}
+        <div className="create_form_container_head">
+          {" "}
+          <IoChevronBack
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              dispatch(setNewformtitle(""));
+              router.push("/");
+            }}
+          />
+          <p>{formtitle}</p>
+          <HiPencil
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              setIsModalOpen(true);
+            }}
+          />
+        </div>
         <div className="create_form_container">
-          <div className="create_form_container_head">
-            {" "}
-            <IoChevronBack
-              style={{ cursor: "pointer" }}
-              onClick={() => {
-                dispatch(setNewformtitle(""));
-                router.push("/");
-              }}
-            />
-            <p>{formtitle}</p>
-            <HiPencil
-              style={{ cursor: "pointer" }}
-              onClick={() => {
-                setIsModalOpen(true);
-              }}
-            />
-          </div>
           <div>
             {!feedbackformlist ? (
               <h3 className="create_form_lable">Add Fields</h3>
             ) : (
               <div>
-                {feedbackformlist && feedbackformlist.map((item, index) => {
-                  return (
-                    <div
-                      key={item.id}
-                      onDragEnter={(e) => dragEnter(e, index)}
-                      onDragStart={(e) => dragStart(e, index)}
-                      onDragEnd={drop}
-                      draggable
-                    >
-                      {item.type === "textarea" && (
-                        <TextArea
-                          id={item.id}
-                          label={item.label}
-                          errormsg={item.errormsg}
-                          require={item.require}
-                          removeField={removeField}
-                          opencloseaddfield={opencloseaddfield}
-                          setRadioEdit={setRadioEdit}
-                          setEditFieldId={setEditFieldId}
-                        />
-                      )}
-                      {item.type === "numberrating" && (
-                        <NumberRating
-                          id={item.id}
-                          label={item.label}
-                          errormsg={item.errormsg}
-                          require={item.require}
-                          removeField={removeField}
-                          opencloseaddfield={opencloseaddfield}
-                          setRadioEdit={setRadioEdit}
-                          setEditFieldId={setEditFieldId}
-                        />
-                      )}
-                      {item.type === "starrating" && (
-                        <StarRating
-                          id={item.id}
-                          label={item.label}
-                          errormsg={item.errormsg}
-                          require={item.require}
-                          removeField={removeField}
-                          opencloseaddfield={opencloseaddfield}
-                          setRadioEdit={setRadioEdit}
-                          setEditFieldId={setEditFieldId}
-                        />
-                      )}{" "}
-                      {item.type === "smile" && (
-                        <Smile
-                          id={item.id}
-                          label={item.label}
-                          errormsg={item.errormsg}
-                          require={item.require}
-                          removeField={removeField}
-                          opencloseaddfield={opencloseaddfield}
-                          setRadioEdit={setRadioEdit}
-                          setEditFieldId={setEditFieldId}
-                        />
-                      )}{" "}
-                      {item.type === "singlelineinput" && (
-                        <SingleLineInput
-                          id={item.id}
-                          label={item.label}
-                          errormsg={item.errormsg}
-                          require={item.require}
-                          removeField={removeField}
-                          opencloseaddfield={opencloseaddfield}
-                          setRadioEdit={setRadioEdit}
-                          setEditFieldId={setEditFieldId}
-                        />
-                      )}{" "}
-                      {item.type === "radiobutton" && (
-                        <RadioButton
-                          id={item.id}
-                          label={item.label}
-                          errormsg={item.errormsg}
-                          require={item.require}
-                          options={item.options}
-                          removeField={removeField}
-                          radioEdit={radioEdit}
-                          opencloseaddfield={opencloseaddfield}
-                          setRadioEdit={setRadioEdit}
-                          setEditFieldId={setEditFieldId}
-                        />
-                      )}{" "}
-                      {item.type === "category" && (
-                        <Category
-                          id={item.id}
-                          label={item.label}
-                          errormsg={item.errormsg}
-                          options={item.options}
-                          require={item.require}
-                          removeField={removeField}
-                          opencloseaddfield={opencloseaddfield}
-                          setRadioEdit={setRadioEdit}
-                          setEditFieldId={setEditFieldId}
-                        />
-                      )}
-                    </div>
-                  );
-                })}
+                {feedbackformlist &&
+                  feedbackformlist.map((item, index) => {
+                    return (
+                      <div
+                        key={item.id}
+                        onDragEnter={(e) => dragEnter(e, index)}
+                        onDragStart={(e) => dragStart(e, index)}
+                        onDragEnd={drop}
+                        draggable
+                      >
+                        {item.type === "textarea" && (
+                          <TextArea
+                            id={item.id}
+                            label={item.label}
+                            errormsg={item.errormsg}
+                            require={item.require}
+                            removeField={removeField}
+                            opencloseaddfield={opencloseaddfield}
+                            setRadioEdit={setRadioEdit}
+                            setEditFieldId={setEditFieldId}
+                          />
+                        )}
+                        {item.type === "numberrating" && (
+                          <NumberRating
+                            id={item.id}
+                            label={item.label}
+                            errormsg={item.errormsg}
+                            require={item.require}
+                            removeField={removeField}
+                            opencloseaddfield={opencloseaddfield}
+                            setRadioEdit={setRadioEdit}
+                            setEditFieldId={setEditFieldId}
+                          />
+                        )}
+                        {item.type === "starrating" && (
+                          <StarRating
+                            id={item.id}
+                            label={item.label}
+                            errormsg={item.errormsg}
+                            require={item.require}
+                            removeField={removeField}
+                            opencloseaddfield={opencloseaddfield}
+                            setRadioEdit={setRadioEdit}
+                            setEditFieldId={setEditFieldId}
+                          />
+                        )}{" "}
+                        {item.type === "smile" && (
+                          <Smile
+                            id={item.id}
+                            label={item.label}
+                            errormsg={item.errormsg}
+                            require={item.require}
+                            removeField={removeField}
+                            opencloseaddfield={opencloseaddfield}
+                            setRadioEdit={setRadioEdit}
+                            setEditFieldId={setEditFieldId}
+                          />
+                        )}{" "}
+                        {item.type === "singlelineinput" && (
+                          <SingleLineInput
+                            id={item.id}
+                            label={item.label}
+                            errormsg={item.errormsg}
+                            require={item.require}
+                            removeField={removeField}
+                            opencloseaddfield={opencloseaddfield}
+                            setRadioEdit={setRadioEdit}
+                            setEditFieldId={setEditFieldId}
+                          />
+                        )}{" "}
+                        {item.type === "radiobutton" && (
+                          <RadioButton
+                            id={item.id}
+                            label={item.label}
+                            errormsg={item.errormsg}
+                            require={item.require}
+                            options={item.options}
+                            removeField={removeField}
+                            radioEdit={radioEdit}
+                            opencloseaddfield={opencloseaddfield}
+                            setRadioEdit={setRadioEdit}
+                            setEditFieldId={setEditFieldId}
+                          />
+                        )}{" "}
+                        {item.type === "category" && (
+                          <Category
+                            id={item.id}
+                            label={item.label}
+                            errormsg={item.errormsg}
+                            options={item.options}
+                            require={item.require}
+                            removeField={removeField}
+                            opencloseaddfield={opencloseaddfield}
+                            setRadioEdit={setRadioEdit}
+                            setEditFieldId={setEditFieldId}
+                          />
+                        )}
+                      </div>
+                    );
+                  })}
               </div>
             )}
           </div>

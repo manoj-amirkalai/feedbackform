@@ -1,6 +1,6 @@
 .formcreate {
   background-color: rgba(243, 243, 243, 1);
-  min-height: 100vh;
+  height: 100vh;
   width: 100vw;
   color: black;
 }
@@ -12,6 +12,7 @@
   line-height: 26px;
   letter-spacing: 0.46000000834465027px;
   text-align: left;
+  overflow: hidden;
 }
 .createform_header {
   display: flex;
@@ -24,13 +25,22 @@
   display: flex;
   gap: 30px;
 }
+.create_form_container_head {
+  position: absolute;
+  top: 120px;
+  z-index: 2;
+}
 .create_form_container {
   position: relative;
   width: 500px;
-  min-height: 752px;
+  height: 732px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background: rgba(255, 255, 255, 1);
   border-radius: 10px;
+  overflow: scroll;
+  margin-top: 75px;
+  overflow-x: hidden;
+  padding-top: 20px;
 }
 .create_form_container_head {
   width: 500px;
@@ -165,14 +175,35 @@
 }
 .radio_options {
   margin-top: 20px;
-  margin-bottom:0px;
-}.save_cancel{
+  margin-bottom: 0px;
+}
+.save_cancel {
   margin-top: 20px !important;
   display: flex;
   gap: 20px;
 }
-.formcreate_header Image{
+.formcreate_header Image {
   cursor: pointer;
-}.logo{
+}
+.logo {
   cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
