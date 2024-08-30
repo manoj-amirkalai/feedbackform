@@ -70,7 +70,7 @@ const ViewFeedBackForm = ({ feedbackforminfo, id }) => {
                 <div className="view_container">
                   <div className="view_submitted">
                     <div className="view_box">
-                      <p>{feedback?.length + 21}</p>
+                      <p>{data.viewed }</p>
                       <p>VIEWS</p>
                     </div>
                     <div className="submitted_box">
