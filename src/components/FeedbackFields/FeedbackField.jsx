@@ -83,8 +83,8 @@ const CreateForm = () => {
       timeSwitch: timeSwitch,
       dateFormatedvalue: dateFormatedvalue,
       timeFormatedvalue: timeFormatedvalue,
-      submitted: 1,
-      viewed: 1,
+      submitted: 0,
+      viewed: 0,
       feedbacktitle: formTitle,
       feedbackform: feedbackformlist,
     };
