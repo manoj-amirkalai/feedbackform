@@ -207,3 +207,123 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+@media only screen and (max-width: 1500px) {
+  .create_form_container_head {
+    margin-top: -44px;
+    width: 44vw;
+  }
+  .create_form_container {
+    height: 70vh !important;
+    margin-top: 2%;
+    width: 44vw;
+  }
+  .create_form_add_options {
+    top: 3%;
+    right: -1%;
+    transform: scale(0.9);
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .create_form_container_head {
+    margin-top: -44px;
+    width: 64vw;
+  }
+  .create_form_container {
+    height: 70vh !important;
+    margin-top: 2%;
+    width: 64vw;
+  }
+  .create_form_add_options {
+    top: 3%;
+    right: -1%;
+    transform: scale(0.9);
+  }
+}
+@media only screen and (max-width: 800px) {
+  .create_form_container_head {
+    margin-top: -44px;
+    width: 84vw;
+    transform: scale(0.7);
+    margin-left: 5%;
+  }
+  .create_form_container {
+    height: 70vh !important;
+    margin-top: -8%;
+    width: 84vw;
+    transform: scale(0.7);
+    margin-left: 3.7%;
+  }
+  .create_form_add_options {
+    top: -10%;
+    right: -8%;
+    transform: scale(0.6);
+  }
+}
+@media only screen and (max-width: 650px) {
+  .create_form_container_head {
+    margin-top: -44px;
+    width: 84vw;
+    transform: scale(0.7);
+    margin-left: 15%;
+  }
+  .create_form_container {
+    height: 70vh !important;
+    margin-top: -8%;
+    width: 84vw;
+    transform: scale(0.7);
+    margin-left: 10%;
+  }
+  .create_form_add_options {
+    top: -15%;
+    right: -12%;
+    transform: scale(0.5);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .create_form_container_head {
+    margin-top: -74px;
+    width: 84vw;
+    height: 5vh;
+    transform: scale(0.7);
+    margin-left: 48%;
+    padding-right: 5px;
+  }
+  .formcreate_button {
+    position: absolute;
+    right: -45px;
+    transform: scale(0.5);
+  }
+  .createform_header {
+    justify-content: space-between;
+  }
+  .create_form_container {
+    height: 90vh !important;
+    width: 84vw;
+    transform: scale(0.7);
+    margin-left: 26%;
+    padding-top: 40px;
+    margin-top: -97px;
+  }
+  .create_form_add_options {
+    top: -26%;
+    right: -28%;
+    transform: scale(0.4);
+  }
+  .create_form_container_head p {
+    font-size: 3vw;
+    width: 100vw;
+  }
+  .createform_header {
+    height: 5vh;
+  }
+  .formcreate_header span {
+    position: absolute;
+    font-size: 12px;
+    left: 45px;
+  }
+  .logo {
+    transform: scale(0.5);
+  }
+}

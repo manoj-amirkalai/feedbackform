@@ -9,7 +9,7 @@ const Page = ({ params }) => {
 
   const getData = async (id) => {
     fetch(
-      `https://feedbackform-next-js.onrender.com/api/feedbackform`,
+      `http://localhost:3000/api/feedbackform`,
 
       {
         method: "DELETE",

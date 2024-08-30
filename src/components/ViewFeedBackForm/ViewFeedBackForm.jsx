@@ -15,7 +15,7 @@ const ViewFeedBackForm = ({ feedbackforminfo, id }) => {
   const [feedback, setFeedback] = useState();
   const getData = async (id) => {
     fetch(
-      `https://feedbackform-next-js.onrender.com/api/feedbackform`,
+      `http://localhost:3000/api/feedbackform`,
 
       {
         method: "DELETE",
@@ -42,11 +42,15 @@ const ViewFeedBackForm = ({ feedbackforminfo, id }) => {
     borderRadius: 4,
   };
   const content = <div style={contentStyle} />;
+  useEffect(()=>{
+    console.log(feedbackforminfo);
+    
+  },[feedbackforminfo])
   return (
     <>
       <div className="viewpage">
         <div className="viewpage_header">
-          <Image src={logo} alt="logo" width={64} height={64} />
+          <Image className="logo" src={logo} alt="logo" width={64} height={64} />
           <span>USER FEEDBACK</span>
         </div>{" "}
         {feedbackforminfo &&
@@ -65,12 +69,12 @@ const ViewFeedBackForm = ({ feedbackforminfo, id }) => {
                     </p>
                     <p>{data.feedbacktitle}</p>
                   </div>
-                  <div>created date: {data.dateFormatedvalue}</div>
+                  <div className="view_feedback_form_title_date">created date: {data.dateFormatedvalue}</div>
                 </div>
                 <div className="view_container">
                   <div className="view_submitted">
                     <div className="view_box">
-                      <p>{data.viewed }</p>
+                      <p>{data.viewed}</p>
                       <p>VIEWS</p>
                     </div>
                     <div className="submitted_box">
@@ -88,8 +92,8 @@ const ViewFeedBackForm = ({ feedbackforminfo, id }) => {
                         <span style={{ color: "blue" }}> {data.urlValue}</span>
                       </a>
                     )}
-            {  data.dateSwitch &&      <p>date: {data.dateFormatedvalue}</p>}
-            {  data.timeSwitch &&         <p>Time: {data.timeFormatedvalue}</p>}
+                    {data.dateSwitch && <p>date: {data.dateFormatedvalue}</p>}
+                    {data.timeSwitch && <p>Time: {data.timeFormatedvalue}</p>}
                   </div>
                   <p className="feedback_list">Feedback List</p>
                   {!feedback && (

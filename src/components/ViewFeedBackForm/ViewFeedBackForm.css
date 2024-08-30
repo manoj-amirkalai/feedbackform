@@ -5,6 +5,7 @@
   min-height: 100vh;
   color: black;
   padding-bottom: 50px;
+  overflow: scroll;
 }
 .viewpage_header {
   display: flex;
@@ -17,7 +18,9 @@
   text-align: left;
 }
 .view_container {
-  width: 1857px;
+  position: absolute;
+  left: 2.5%;
+  width: 95%;
   margin: 0px auto;
   padding: 20px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -28,7 +31,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: rgba(85, 120, 244, 1);
-  width: 1857px;
+  width: 95%;
   height: 74px;
   padding: 20px;
   gap: 0px;
@@ -142,10 +145,104 @@
 .updown {
   transform: rotate(180deg);
 }
-.no_feedback_data{
+.no_feedback_data {
   display: flex;
   justify-content: center;
-  margin: 10px auto ;
+  margin: 10px auto;
   font-size: 40px;
   font-weight: 900;
-} 
+}
+
+/* @media only screen and (max-width: 400px) {
+  .viewpage {
+    overflow: scroll;
+    position: relative;
+  }
+  .viewpage_header span {
+    transform: scale(0.7);
+  }
+  .logo {
+    transform: scale(0.5);
+    margin-right: -50px;
+  }
+  .viewpage_header {
+    height: 50px;
+  }
+  .view_feedback_form_title {
+    transform: scale(0.5);
+    width: 180vw;
+    margin-left: -150px;
+    margin-top: 0px;
+    position: relative;
+  }
+  .view_feedback_form_title_lable {
+    font-size: 20px;
+    margin-left: -15px;
+  }
+  .view_feedback_form_title_date {
+    font-size: 20px;
+  }
+  .view_container {
+    transform: scale(0.5);
+    width: 180vw;
+    position: absolute;
+    top: 150px;
+    left: -150px;
+  }
+  .view_submitted {
+    margin-top: -260px;
+  }
+  .no_feedback_data {
+    margin-top: 300px;
+  }
+  .feedback_list_items {
+    width: 170vw;
+  }
+} */
+
+@media only screen and (max-width: 1000px) {
+  .viewpage {
+    overflow: scroll;
+  }
+  .viewpage_header span {
+    transform: scale(0.7);
+  }
+  .logo {
+    transform: scale(0.5);
+    margin-right: -50px;
+  }
+  .viewpage_header {
+    height: 50px;
+  }
+  .view_feedback_form_title {
+    transform: scale(0.5);
+    width: 180vw;
+    margin-left: -40%;
+    margin-top: 0px;
+    position: relative;
+  }
+  .view_feedback_form_title_lable {
+    font-size: 20px;
+    margin-left: -15px;
+  }
+  .view_feedback_form_title_date {
+    font-size: 20px;
+  }
+  .view_container {
+    transform: scale(0.5);
+    width: 180vw;
+    margin-top: 3%;
+    margin-left: -42.5%;
+  }
+  .view_submitted {
+    margin-top: -260px;
+  }
+  .no_feedback_data {
+    margin-top: 300px;
+  }
+  .feedback_list_items {
+    width: 170vw;
+  }.view_container_mobile{
+    margin-top: -28%;
+  }
+}

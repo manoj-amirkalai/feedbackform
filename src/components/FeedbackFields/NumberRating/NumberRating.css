@@ -48,3 +48,10 @@
 .number_rating{
     margin: 25px 15px 30px 25px;
 }
+@media only screen and (max-width: 550px) {
+  .addfield_textarea {
+    transform: scale(0.6);
+    margin-top: -50px;
+    margin-left: -87px;
+  }
+}

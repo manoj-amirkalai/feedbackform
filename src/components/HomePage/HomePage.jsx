@@ -22,12 +22,9 @@ const HomePage = () => {
   const [feedbackformlist, setFeedbackformlist] = useState([]);
   const fetchdata = async () => {
     try {
-      const res = await axios.get(
-        `https://feedbackform-next-js.onrender.com/api/feedbackform`,
-        {
-          cache: "no-store",
-        }
-      );
+      const res = await axios.get(`http://localhost:3000/api/feedbackform`, {
+        cache: "no-store",
+      });
 
       if (res.status !== 200) {
         throw new Error("Failed to fetch topics");
@@ -40,7 +37,7 @@ const HomePage = () => {
   const uploadfeedbackformData = async (id) => {
     try {
       const res = await fetch(
-        `https://feedbackform-next-js.onrender.com/api/feedbackform`,
+        `http://localhost:3000/api/feedbackform`,
 
         {
           method: "DELETE",
@@ -90,10 +87,15 @@ const HomePage = () => {
   };
   useEffect(() => {
     fetchdata();
+    
   }, []);
+  useEffect(()=>{
+    
+    console.log(feedbackformlist);
+  },[feedbackformlist])
   // const getData = async (id) => {
   //   fetch(
-  //     `https://feedbackform-next-js.onrender.com/api/feedbackform`,
+  //     `http://localhost:3000/api/feedbackform`,
 
   //     {
   //       method: "DELETE",
@@ -115,7 +117,7 @@ const HomePage = () => {
   return (
     <div className={styles.homepage}>
       <div className={styles.home_header}>
-        <Image src={logo} alt="logo" width={64} height={64} />
+        <Image className="logo" src={logo} alt="logo" width={64} height={64} />
         <span>USER FEEDBACK</span>
       </div>
 
@@ -138,7 +140,7 @@ const HomePage = () => {
         {feedbackformlist &&
           feedbackformlist.map((value, index) => {
             return (
-              <div key={value._id} className={styles.formdata_box}>
+              <div  key={value._id} className={styles.formdata_box}>
                 <div className={styles.box_head}>
                   <Image src={surveyicon} alt="surveyicon" />
                 </div>

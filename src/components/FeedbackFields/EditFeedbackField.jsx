@@ -99,7 +99,7 @@ const CreateForm = ({ id }) => {
     }
     try {
       const res = await fetch(
-        `https://feedbackform-next-js.onrender.com/api/feedbackform`,
+        `http://localhost:3000/api/feedbackform`,
 
         {
           method: "PUT",
@@ -154,8 +154,7 @@ const CreateForm = ({ id }) => {
 
     setFeedbackformlist(data);
   };
-  useEffect(() => {
-  }, [editFieldRequired, editFieldId]);
+  useEffect(() => {}, [editFieldRequired, editFieldId]);
   const updateformList = () => {
     const data = feedbackformlist.map((field) => {
       if (field.type === "radiobutton" || field.type === "category") {
@@ -191,7 +190,7 @@ const CreateForm = ({ id }) => {
   };
   const getData = async (id) => {
     fetch(
-      `https://feedbackform-next-js.onrender.com/api/feedbackform`,
+      `http://localhost:3000/api/feedbackform`,
 
       {
         method: "DELETE",
@@ -213,7 +212,6 @@ const CreateForm = ({ id }) => {
     getData(id);
   }, [id]);
   useEffect(() => {
-
     setUrlSwitch(feedbackforminfo.urlSwitch);
     setFormTitle(feedbackforminfo.feedbacktitle);
     setUrlValue(feedbackforminfo.urlValue);
@@ -307,29 +305,25 @@ const CreateForm = ({ id }) => {
           </Button>
         </div>{" "}
       </div>
-      <div className="create_form"> <div className="create_form_container_head">
-            {" "}
-            <IoChevronBack
-              style={{ cursor: "pointer" }}
-              onClick={() => {
-                router.push("/");
-              }}
-            />
-            {formTitle ? (
-              <p>{formTitle}</p>
-            ) : (
-              
-              <>Loading... </>
-            )}
-            <HiPencil
-              style={{ cursor: "pointer" }}
-              onClick={() => {
-                setIsModalOpen(true);
-              }}
-            />
-          </div>
+      <div className="create_form">
+        {" "}
+        <div className="create_form_container_head">
+          {" "}
+          <IoChevronBack
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              router.push("/");
+            }}
+          />
+          {formTitle ? <p>{formTitle}</p> : <>Loading... </>}
+          <HiPencil
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              setIsModalOpen(true);
+            }}
+          />
+        </div>
         <div className="create_form_container">
-         
           <div>
             {!feedbackformlist ? (
               <Flex
