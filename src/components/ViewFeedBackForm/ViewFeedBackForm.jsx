@@ -42,9 +42,7 @@ const ViewFeedBackForm = ({ feedbackforminfo, id }) => {
     borderRadius: 4,
   };
   const content = <div style={contentStyle} />;
-  useEffect(() => {
-    console.log(feedbackforminfo);
-  }, [feedbackforminfo]);
+
   return (
     <>
       <div className="viewpage">
@@ -78,7 +76,13 @@ const ViewFeedBackForm = ({ feedbackforminfo, id }) => {
                     created date: {data.dateFormatedvalue}
                   </div>
                 </div>
-                <div className="view_container">
+                <div
+                  className={
+                    openitem
+                      ? "view_container view_container_mobile"
+                      : " view_container "
+                  }
+                >
                   <div className="view_submitted">
                     <div className="view_box">
                       <p>{data.viewed}</p>

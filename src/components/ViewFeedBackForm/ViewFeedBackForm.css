@@ -242,7 +242,16 @@
   }
   .feedback_list_items {
     width: 170vw;
-  }.view_container_mobile{
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .view_container_mobile{
+    margin-top: -13%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .view_container_mobile{
     margin-top: -28%;
   }
 }
