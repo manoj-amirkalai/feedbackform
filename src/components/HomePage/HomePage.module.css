@@ -240,11 +240,9 @@
 
   .home_header span {
     transform: scale(0.7);
-    margin-left: -50px;
   }
   .logo {
     transform: scale(0.5);
-    margin-right: -80px;
   }
   .home_header {
     height: 50px;
