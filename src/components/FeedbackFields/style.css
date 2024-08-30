@@ -287,7 +287,7 @@
     width: 84vw;
     height: 5vh;
     transform: scale(0.7);
-    margin-left: 48%;
+    margin-left: 33.5%;
     padding-right: 5px;
   }
   .formcreate_button {
@@ -302,13 +302,13 @@
     height: 90vh !important;
     width: 84vw;
     transform: scale(0.7);
-    margin-left: 26%;
+    margin-left: 20%;
     padding-top: 40px;
-    margin-top: -100px;
+    margin-top: -127px;
   }
   .create_form_add_options {
-    top: -31%;
-    right: -28%;
+    top: -22%;
+    right: -20%;
     transform: scale(0.4);
   }
   .create_form_container_head p {
@@ -317,7 +317,6 @@
   }
   .createform_header {
     height: 5vh;
-    margin-left: -5px;
   }
   .formcreate_header span {
     position: absolute;
