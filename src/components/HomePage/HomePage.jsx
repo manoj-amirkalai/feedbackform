@@ -22,9 +22,12 @@ const HomePage = () => {
   const [feedbackformlist, setFeedbackformlist] = useState([]);
   const fetchdata = async () => {
     try {
-      const res = await axios.get(`https://feedbackform-next-js.onrender.com/api/feedbackform`, {
-        cache: "no-store",
-      });
+      const res = await axios.get(
+        `https://feedbackform-next-js.onrender.com/api/feedbackform`,
+        {
+          cache: "no-store",
+        }
+      );
 
       if (res.status !== 200) {
         throw new Error("Failed to fetch topics");
@@ -88,27 +91,27 @@ const HomePage = () => {
   useEffect(() => {
     fetchdata();
   }, []);
-  const getData = async (id) => {
-    fetch(
-      `https://feedbackform-next-js.onrender.com/api/feedbackform`,
+  // const getData = async (id) => {
+  //   fetch(
+  //     `https://feedbackform-next-js.onrender.com/api/feedbackform`,
 
-      {
-        method: "DELETE",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({ id: id, type: "feedbackdata" }),
-      }
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setSubmitcount(data[0].length);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  };
-  getData("66cec8029f09bd6ae0d6d136");
+  //     {
+  //       method: "DELETE",
+  //       headers: {
+  //         "Content-type": "application/json",
+  //       },
+  //       body: JSON.stringify({ id: id, type: "feedbackdata" }),
+  //     }
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setSubmitcount(data[0].length);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //     });
+  // };
+  // getData("66cec8029f09bd6ae0d6d136");
   return (
     <div className={styles.homepage}>
       <div className={styles.home_header}>
@@ -125,7 +128,7 @@ const HomePage = () => {
 
           <p>New form</p>
         </div>
-        { (feedbackformlist.length===0 || !feedbackformlist) && (
+        {(feedbackformlist.length === 0 || !feedbackformlist) && (
           <Flex className="spin_loading" align="center" gap="middle">
             <Spin tip="Loading..." size="large">
               {content}
@@ -142,7 +145,7 @@ const HomePage = () => {
                 <h3>{value.feedbacktitle}</h3>
                 <div className={styles.formdata_details}>
                   <p>Submitted</p>
-                  <p>{submitcount}</p>
+                  <p>{value.submitted}</p>
                 </div>
                 <div className={styles.formdata_details}>
                   {" "}
