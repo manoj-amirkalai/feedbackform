@@ -42,15 +42,20 @@ const ViewFeedBackForm = ({ feedbackforminfo, id }) => {
     borderRadius: 4,
   };
   const content = <div style={contentStyle} />;
-  useEffect(()=>{
+  useEffect(() => {
     console.log(feedbackforminfo);
-    
-  },[feedbackforminfo])
+  }, [feedbackforminfo]);
   return (
     <>
       <div className="viewpage">
         <div className="viewpage_header">
-          <Image className="logo" src={logo} alt="logo" width={64} height={64} />
+          <Image
+            className="logo"
+            src={logo}
+            alt="logo"
+            width={64}
+            height={64}
+          />
           <span>USER FEEDBACK</span>
         </div>{" "}
         {feedbackforminfo &&
@@ -69,7 +74,9 @@ const ViewFeedBackForm = ({ feedbackforminfo, id }) => {
                     </p>
                     <p>{data.feedbacktitle}</p>
                   </div>
-                  <div className="view_feedback_form_title_date">created date: {data.dateFormatedvalue}</div>
+                  <div className="view_feedback_form_title_date">
+                    created date: {data.dateFormatedvalue}
+                  </div>
                 </div>
                 <div className="view_container">
                   <div className="view_submitted">

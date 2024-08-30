@@ -222,7 +222,7 @@
     row-gap: 20px;
     overflow: scroll;
     margin-top: 0;
-    min-height:200px !important;
+    min-height: 200px !important;
   }
   .formdata_box {
     transform: scale(0.5);
@@ -235,16 +235,16 @@
   .newform_box {
     transform: scale(0.5);
     margin-top: -70px;
-
-    height: 389px;
+    height: 395px;
   }
 
   .home_header span {
     transform: scale(0.7);
+    margin-left: -50px;
   }
   .logo {
     transform: scale(0.5);
-    margin-right: -50px;
+    margin-right: -80px;
   }
   .home_header {
     height: 50px;

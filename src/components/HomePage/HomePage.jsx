@@ -87,12 +87,10 @@ const HomePage = () => {
   };
   useEffect(() => {
     fetchdata();
-    
   }, []);
-  useEffect(()=>{
-    
+  useEffect(() => {
     console.log(feedbackformlist);
-  },[feedbackformlist])
+  }, [feedbackformlist]);
   // const getData = async (id) => {
   //   fetch(
   //     `https://feedbackform-next-js.onrender.com/api/feedbackform`,
@@ -140,7 +138,7 @@ const HomePage = () => {
         {feedbackformlist &&
           feedbackformlist.map((value, index) => {
             return (
-              <div  key={value._id} className={styles.formdata_box}>
+              <div key={value._id} className={styles.formdata_box}>
                 <div className={styles.box_head}>
                   <Image src={surveyicon} alt="surveyicon" />
                 </div>
