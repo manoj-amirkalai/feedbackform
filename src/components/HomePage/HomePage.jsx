@@ -22,7 +22,7 @@ const HomePage = () => {
   const [feedbackformlist, setFeedbackformlist] = useState([]);
   const fetchdata = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/api/feedbackform`, {
+      const res = await axios.get(`https://feedbackform-next-js.onrender.com/api/feedbackform`, {
         cache: "no-store",
       });
 
@@ -37,7 +37,7 @@ const HomePage = () => {
   const uploadfeedbackformData = async (id) => {
     try {
       const res = await fetch(
-        `http://localhost:3000/api/feedbackform`,
+        `https://feedbackform-next-js.onrender.com/api/feedbackform`,
 
         {
           method: "DELETE",
@@ -95,7 +95,7 @@ const HomePage = () => {
   },[feedbackformlist])
   // const getData = async (id) => {
   //   fetch(
-  //     `http://localhost:3000/api/feedbackform`,
+  //     `https://feedbackform-next-js.onrender.com/api/feedbackform`,
 
   //     {
   //       method: "DELETE",

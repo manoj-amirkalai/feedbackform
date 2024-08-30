@@ -98,7 +98,7 @@ const CreateForm = () => {
     }
     try {
       const res = await fetch(
-        `http://localhost:3000/api/feedbackform`,
+        `https://feedbackform-next-js.onrender.com/api/feedbackform`,
 
         {
           method: "POST",
