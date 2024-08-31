@@ -120,6 +120,11 @@ const CreateForm = () => {
       console.log(error);
     }
   };
+  useEffect(()=>{
+console.log(window.innerHeight);
+console.log(window.innerWidth);
+
+  },[])
   useEffect(() => {
     if (editFieldId) {
       const field = feedbackformlist.find((field) => field.id === editFieldId);
