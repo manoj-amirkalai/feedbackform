@@ -6,7 +6,7 @@ module.exports = {
     return [
       {
         source: "/api/:path*",
-        destination: "https://feedbackform-next-js.onrender.com/:path*", // Proxy to the backend
+        destination: "http://localhost:3000/:path*", // Proxy to the backend
       },
     ];
   },

@@ -55,8 +55,6 @@ export async function PUT(request) {
     timeSwitch: timeSwitch,
     dateFormatedvalue: dateFormatedvalue,
     timeFormatedvalue: timeFormatedvalue,
-    submitted: submitted,
-    viewed: viewed,
     feedbacktitle: feedbacktitle,
     feedbackform: feedbackform,
   });
