@@ -121,8 +121,8 @@ const CreateForm = () => {
     }
   };
   useEffect(()=>{
-console.log(window.innerHeight);
-console.log(window.innerWidth);
+alert(window.innerHeight);
+alert(window.innerWidth);
 
   },[])
   useEffect(() => {
