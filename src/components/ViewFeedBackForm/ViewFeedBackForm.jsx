@@ -48,6 +48,9 @@ const ViewFeedBackForm = ({ feedbackforminfo, id }) => {
       <div className="viewpage">
         <div className="viewpage_header">
           <Image
+             onClick={() => {
+              router.push("/");
+            }}
             className="logo"
             src={logo}
             alt="logo"
