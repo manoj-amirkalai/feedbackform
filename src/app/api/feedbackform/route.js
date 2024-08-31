@@ -44,8 +44,6 @@ export async function PUT(request) {
     timeSwitch,
     dateFormatedvalue,
     timeFormatedvalue,
-    submitted,
-    viewed,
     feedbacktitle,
     feedbackform,
   } = await request.json();
