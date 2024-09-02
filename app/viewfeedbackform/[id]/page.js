@@ -9,14 +9,12 @@ const Page = ({ params }) => {
 
   const getData = async (id) => {
     fetch(
-      `https://feedbackform-next-js.onrender.com/api/feedbackform`,
+      `https://feedbackform-next-js.onrender.com/api/feedbackform/${id}`,
 
       {
-        method: "DELETE",
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ id: id, type: "singledata" }),
       }
     )
       .then((response) => response.json())

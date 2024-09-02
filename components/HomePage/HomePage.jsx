@@ -16,7 +16,6 @@ import { useRouter } from "next/navigation";
 
 const HomePage = () => {
   const formtitle = useSelector((state) => state.data.newformtitle);
-  const [submitcount, setSubmitcount] = useState("");
   const dispatch = useDispatch();
 
   const [feedbackformlist, setFeedbackformlist] = useState([]);
@@ -44,7 +43,7 @@ const HomePage = () => {
           headers: {
             "Content-type": "application/json",
           },
-          body: JSON.stringify({ id: id, type: "delete" }),
+          body: JSON.stringify({ id: id}),
         }
       );
       if (!res.ok) {
@@ -91,27 +90,7 @@ const HomePage = () => {
   useEffect(() => {
     console.log(feedbackformlist);
   }, [feedbackformlist]);
-  // const getData = async (id) => {
-  //   fetch(
-  //     `https://feedbackform-next-js.onrender.com/api/feedbackform`,
-
-  //     {
-  //       method: "DELETE",
-  //       headers: {
-  //         "Content-type": "application/json",
-  //       },
-  //       body: JSON.stringify({ id: id, type: "feedbackdata" }),
-  //     }
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setSubmitcount(data[0].length);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error:", error);
-  //     });
-  // };
-  // getData("66cec8029f09bd6ae0d6d136");
+  
   return (
     <div className={styles.homepage}>
       <div className={styles.home_header}>

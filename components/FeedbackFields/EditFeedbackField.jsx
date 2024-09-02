@@ -77,7 +77,6 @@ const CreateForm = ({ id }) => {
       return message.error("Please enter title");
     }
     const data = {
-      feedbackforminfoId: feedbackforminfoId,
       urlSwitch: urlSwitch,
       urlValue: urlValue,
       dateSwitch: dateSwitch,
@@ -97,7 +96,7 @@ const CreateForm = ({ id }) => {
     }
     try {
       const res = await fetch(
-        `https://feedbackform-next-js.onrender.com/api/feedbackform`,
+        `https://feedbackform-next-js.onrender.com/api/feedbackform/${id}`,
 
         {
           method: "PUT",
@@ -188,14 +187,12 @@ const CreateForm = ({ id }) => {
   };
   const getData = async (id) => {
     fetch(
-      `https://feedbackform-next-js.onrender.com/api/feedbackform`,
+      `https://feedbackform-next-js.onrender.com/api/feedbackform/${id}`,
 
       {
-        method: "DELETE",
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ id: id, type: "singledata" }),
       }
     )
       .then((response) => response.json())
