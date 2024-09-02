@@ -87,9 +87,6 @@ const HomePage = () => {
   useEffect(() => {
     fetchdata();
   }, []);
-  useEffect(() => {
-    console.log(feedbackformlist);
-  }, [feedbackformlist]);
   
   return (
     <div className={styles.homepage}>
